@@ -17,6 +17,6 @@ jobs:
     - name: Download Utils
       run: echo "nothing to do"
     - name: Dockerlize
-      run: ./docker-build.sh
+      run: ./docker/docker-build.sh
     - name: ls
       run: ls
