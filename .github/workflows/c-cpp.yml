@@ -1,0 +1,23 @@
+name: Build initrd
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Configure FASM
+      uses: dhavalhirdhav/setup-fasm@v.1.0.0-beta.10
+    - name: Download Utils
+      run: sudo apt-get install binutils gmp mpfr libmpc gcc-4.8
+    - name: Dockerlize
+      run: ./docker-build.sh
+    - name: ls
+      run: ls
