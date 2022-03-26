@@ -13,8 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Configure FASM
-      uses: dhavalhirdhav/setup-fasm@v.1.0.0-beta.10
+    
     - name: Download Utils
       run: sudo apt-get install binutils gmp mpfr libmpc gcc-4.8
     - name: Dockerlize
